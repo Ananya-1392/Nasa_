@@ -1,0 +1,74 @@
+
+body {
+    margin: 0;
+    background-color:  #16325B; 
+    font-family: "Roboto", sans-serif;
+  }
+  
+  /* Navbar styles */
+  .navbar {
+    background-color: #16325B;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-dsu-logo img,
+  .nav-nasa-logo img {
+    height: 70px; 
+    margin-right: 10px; 
+  }
+
+  .navbar-menu {
+    list-style: none; 
+    display: flex; 
+    margin: 0;
+    padding: 0; 
+  }
+  
+  .navbar-item {
+    margin-left: 20px;
+  }
+  
+  .navbar-item a {
+    text-decoration: none; 
+    color: white; 
+    font-weight: 500;
+    transition: color 0.3s ease; 
+  }
+  
+  .navbar-item a:hover {
+    color: #ffe600; 
+  }
+
+  .slideshow-container {
+  max-width: 800px;
+  position: relative;
+  text-align: center;
+}
+
+.slideshow-container img {
+  transition: opacity 0.5s ease-in-out; 
+  width: 94.9rem;
+  height: 100%; 
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+}
+

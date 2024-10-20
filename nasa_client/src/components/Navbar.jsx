@@ -1,12 +1,13 @@
 import React from 'react'
+import '../index.css'
 
 const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
         <div className="navbar-logo">
-          <img src="./icons/dsu.png" alt='logo'/>
-          <img src="./icons/logo-dark.png" alt="logo" />
+          <div className="nav-dsu-logo"><img src="./icons/dsu.png" alt='logo' /></div>
+          <div className="nav-nasa-logo"><img src="./icons/logo-dark.png" alt="logo" /></div>
         </div>
         <ul className="navbar-menu">
           <li className="navbar-item">
