@@ -1,7 +1,44 @@
-import React from 'react'
-import '../index.css'
+import React, { useEffect } from 'react';
+import '../index.css';
 
 const Navbar = () => {
+  useEffect(() => {
+    const handleScroll = (e) => {
+      e.preventDefault();
+
+      const targetId = e.target.getAttribute("href");
+      if (targetId.startsWith("#")) {
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+          // Calculate the offset for scrolling
+          const offsetTop = targetElement.getBoundingClientRect().top + window.pageYOffset;
+          const navbarHeight = document.querySelector('.navbar').offsetHeight;
+
+          // Smooth scroll to the calculated position
+          window.scrollTo({
+            top: offsetTop - navbarHeight, // Adjust for the navbar height
+            behavior: 'smooth',
+          });
+        }
+      }
+    };
+
+    // Attach scroll event to all navbar links
+    const scrollLinks = document.querySelectorAll(".navbar-item a");
+
+    scrollLinks.forEach((link) => {
+      link.addEventListener("click", handleScroll);
+    });
+
+    // Clean up the event listeners on unmount
+    return () => {
+      scrollLinks.forEach((link) => {
+        link.removeEventListener("click", handleScroll);
+      });
+    };
+  }, []);
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -11,21 +48,21 @@ const Navbar = () => {
         </div>
         <ul className="navbar-menu">
           <li className="navbar-item">
-            <a href="/">Introduction</a>
+            <a href="#intro">Introduction</a>
           </li>
           <li className="navbar-item">
-            <a href="/about">About DSU</a>
+            <a href="#about">About DSU</a>
           </li>
           <li className="navbar-item">
-            <a href="/services">Statistics</a>
+            <a href="#statistics">Statistics</a>
           </li>
           <li className="navbar-item">
-            <a href="/contact">Contact</a>
+            <a href="#teams">Teams</a>
           </li>
         </ul>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
