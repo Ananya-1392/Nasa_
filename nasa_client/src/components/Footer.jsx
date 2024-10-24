@@ -19,7 +19,7 @@ function Footer() {
         <p>
           Developed by{" "}
           <strong>
-            <span className="t-orange devs">
+            <span className="devs">
               <a href="https://www.linkedin.com/in/ananyashankhdhar/">
                 Ananya Shankhdhar
               </a>
@@ -29,7 +29,7 @@ function Footer() {
         <p>
           Email:{" "}
           <strong>
-            <span className="t-orange">international-relations@dsu.edu.in</span>
+            <span className="devs">international-relations@dsu.edu.in</span>
           </strong>
         </p>
       </div>
