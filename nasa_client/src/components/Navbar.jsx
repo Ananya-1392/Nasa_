@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import '../index.css';
+import React, { useEffect } from "react";
+import "../index.css";
 
 const Navbar = () => {
   useEffect(() => {
@@ -12,13 +12,14 @@ const Navbar = () => {
 
         if (targetElement) {
           // Calculate the offset for scrolling
-          const offsetTop = targetElement.getBoundingClientRect().top + window.pageYOffset;
-          const navbarHeight = document.querySelector('.navbar').offsetHeight;
+          const offsetTop =
+            targetElement.getBoundingClientRect().top + window.pageYOffset;
+          const navbarHeight = document.querySelector(".navbar").offsetHeight;
 
           // Smooth scroll to the calculated position
           window.scrollTo({
             top: offsetTop - navbarHeight, // Adjust for the navbar height
-            behavior: 'smooth',
+            behavior: "smooth",
           });
         }
       }
@@ -42,10 +43,11 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <div className="navbar-logo">
-          <div className="nav-dsu-logo"><img src="./icons/dsu.png" alt='logo' /></div>
-          <div className="nav-nasa-logo"><img src="./icons/logo-dark.png" alt="logo" /></div>
+
+        <div className="nav-dsu-logo">
+          <img src="./icons/DSU LOGO IN BLUE_270-x-95 PX.png" alt="logo" />
         </div>
+
         <ul className="navbar-menu">
           <li className="navbar-item">
             <a href="#intro">Introduction</a>
@@ -54,12 +56,16 @@ const Navbar = () => {
             <a href="#about">About DSU</a>
           </li>
           <li className="navbar-item">
-            <a href="#statistics">Statistics</a>
+            <a href="#stats">Statistics</a>
           </li>
           <li className="navbar-item">
             <a href="#teams">Teams</a>
           </li>
         </ul>
+
+        <div className="nav-nasa-logo">
+          <img src="./icons/logo-dark.png" alt="logo" />
+        </div>
       </div>
     </nav>
   );

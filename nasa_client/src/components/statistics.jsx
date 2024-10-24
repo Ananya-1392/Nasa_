@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const participants = [
   { institution: "DSU Overall", count: "1500+" },
@@ -13,6 +13,33 @@ const participants = [
 ];
 
 const Statistics = () => {
+  useEffect(() => {
+    const blocks = document.querySelectorAll(".blocks");
+
+    const handleIntersection = (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate-block");
+          observer.unobserve(entry.target); // Stop observing once animation is triggered
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, {
+      threshold: 0.1, // Trigger when 10% of the element is visible
+    });
+
+    blocks.forEach((container) => {
+      observer.observe(container);
+    });
+
+    return () => {
+      blocks.forEach((container) => {
+        observer.unobserve(container);
+      });
+    };
+
+  }, []);
   return (
     <section id="stats" className="stats-section">
       <h1>Statistics</h1>
@@ -32,7 +59,7 @@ const Statistics = () => {
         <h2>Participant Breakdown by Institutions</h2>
         <div className="grid-container">
           {participants.map((participant, index) => (
-            <div key={index} className="bars">
+            <div key={index} className="blocks">
               <h3>{participant.institution}</h3>
               <p>{participant.count}</p>
             </div>

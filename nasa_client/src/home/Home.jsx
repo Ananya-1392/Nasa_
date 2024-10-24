@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "../index.css";
 import Navbar from "../components/Navbar";
-import Gallery from "../components/gallery";
-import About from "../components/about";
-import Statistics from "../components/statistics";
+import Gallery from "../components/Gallery";
+import About from "../components/About";
+import Statistics from "../components/Statistics";
+import AutoScroll from "../components/AutoScroll";
+import Footer from "../components/Footer";
 
 // Array of image paths
 const images = [
@@ -57,7 +59,7 @@ const Home = () => {
   }, []);
 
   return (
-    <>
+    <div className="main-content">
       <Navbar />
       <div className="slideshow-container">
         <img
@@ -92,7 +94,9 @@ const Home = () => {
       </div>
       <About />
       <Statistics/>
-    </>
+      <Footer/>
+      <AutoScroll/>
+    </div>
   );
 };
 

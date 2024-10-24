@@ -2,8 +2,8 @@ import React from 'react';
 
 const images = [
     './icons/DSC_0949.JPG',
-    // './icons/DSC_0957.jpg',
-    // './icons/DSC_0959.jpg',
+    './icons/DSC_0957.jpg',
+    './icons/DSC_0959.jpg',
     './icons/DSC_0966.JPG',
 ];
 
