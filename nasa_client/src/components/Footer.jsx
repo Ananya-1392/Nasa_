@@ -16,17 +16,17 @@ function Footer() {
             </a>
           </button>
         </div>
-        <p>
+        <p style={{marginBottom:0}}>
           Developed by{" "}
           <strong>
             <span className="devs">
-              <a href="https://www.linkedin.com/in/ananyashankhdhar/">
-                Ananya Shankhdhar
-              </a>
+                Ananya Shankhdhar <br />
+              <a href="https://www.linkedin.com/in/ananyashankhdhar/">LinkedIn &nbsp;&nbsp;</a>
+              <a href="https://github.com/Ananya-1392">GitHub</a>
             </span>
           </strong>
         </p>
-        <p>
+        <p >
           Email:{" "}
           <strong>
             <span className="devs">international-relations@dsu.edu.in</span>

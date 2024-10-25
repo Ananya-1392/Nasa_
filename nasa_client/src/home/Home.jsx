@@ -9,10 +9,10 @@ import Footer from "../components/Footer";
 
 // Array of image paths
 const images = [
-  "./icons/CDSIMER 21.jpg",
-  "./icons/CDSIMER 23.jpg",
-  "./icons/DSU 1 .jpg",
-  "./icons/CDSIMER 19.jpg",
+  "./icons/dsu.jpg",
+  "./icons/DSC05700.JPG",
+  "./icons/DSC05791.JPG",
+  "./icons/DSC_0313.JPG",
 ];
 
 const Home = () => {

@@ -1,7 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../index.css";
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   useEffect(() => {
     const handleScroll = (e) => {
       e.preventDefault();
@@ -11,28 +13,23 @@ const Navbar = () => {
         const targetElement = document.querySelector(targetId);
 
         if (targetElement) {
-          // Calculate the offset for scrolling
           const offsetTop =
             targetElement.getBoundingClientRect().top + window.pageYOffset;
           const navbarHeight = document.querySelector(".navbar").offsetHeight;
 
-          // Smooth scroll to the calculated position
           window.scrollTo({
-            top: offsetTop - navbarHeight, // Adjust for the navbar height
+            top: offsetTop - navbarHeight,
             behavior: "smooth",
           });
         }
       }
     };
 
-    // Attach scroll event to all navbar links
     const scrollLinks = document.querySelectorAll(".navbar-item a");
-
     scrollLinks.forEach((link) => {
       link.addEventListener("click", handleScroll);
     });
 
-    // Clean up the event listeners on unmount
     return () => {
       scrollLinks.forEach((link) => {
         link.removeEventListener("click", handleScroll);
@@ -43,28 +40,33 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-
         <div className="nav-dsu-logo">
           <img src="./icons/DSU LOGO IN BLUE_270-x-95 PX.png" alt="logo" />
         </div>
-
-        <ul className="navbar-menu">
+      
+        <ul className={`navbar-menu ${isMenuOpen ? "active" : ""}`}>
           <li className="navbar-item">
-            <a href="#intro">Introduction</a>
+            <a href="#intro" onClick={() => setIsMenuOpen(false)}>Introduction</a>
           </li>
           <li className="navbar-item">
-            <a href="#about">About DSU</a>
+            <a href="#about" onClick={() => setIsMenuOpen(false)}>About DSU</a>
           </li>
           <li className="navbar-item">
-            <a href="#stats">Statistics</a>
+            <a href="#stats" onClick={() => setIsMenuOpen(false)}>Statistics</a>
           </li>
           <li className="navbar-item">
-            <a href="#teams">Teams</a>
+            <a href="#teams" onClick={() => setIsMenuOpen(false)}>Teams</a>
           </li>
         </ul>
 
         <div className="nav-nasa-logo">
           <img src="./icons/logo-dark.png" alt="logo" />
+        </div>
+
+        <div className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
         </div>
       </div>
     </nav>

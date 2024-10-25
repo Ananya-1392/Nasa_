@@ -102,7 +102,7 @@ function About() {
         </div>
         <div className="circle visible" id="circle3">
           <span className="number visible">135</span>
-          <span className="label visible">Subject Matter Experts</span>
+          <span className="label visible">Subject Matter <br />Experts</span>
         </div>
         <div className="circle visible" id="circle4">
           <span className="number visible">26</span>
@@ -114,7 +114,7 @@ function About() {
         </div>
         <div className="circle visible" id="circle6">
           <span className="number visible">13</span>
-          <span className="label visible">Initial BFR Trainers</span>
+          <span className="label visible">Initial BFR <br />Trainers</span>
         </div>
       </div>
     </div>
